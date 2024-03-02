@@ -1,0 +1,166 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #2c3e50, #1c2833, #2c3e50);
+  background-size: 400% 400%;
+  animation: darkGradientAnimation 10s ease infinite;
+  color: white; /* Set text color to white for better visibility */
+}
+
+@keyframes darkGradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.parent {
+  margin: 100px;
+  margin-left: 500px;
+}
+.profile-card {
+  height: 500px;
+  width: 300px;
+  background-color: rgb(0, 0, 0, 0.7);
+  border: 2px solid transparent;
+  border-radius: 2%;
+  position: relative;
+}
+
+.profile-img {
+  margin: 50px;
+  margin-left: 70px;
+  border-radius: 10px;
+}
+
+.profile-img img {
+  border-radius: 10%;
+  transition: 0.3s all ease-in-out;
+  transform: scale(1.1);
+}
+
+.profile-card::before {
+  content: "";
+  height: 515px;
+  width: 314px;
+  background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%);
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  z-index: -10;
+  border-radius: 15px;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.profile-card::after {
+  content: "";
+  position: absolute;
+  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+  filter: blur(20.5px);
+  z-index: -1;
+  inset: 0;
+}
+.profile-card:hover::after {
+  filter: blur(50px);
+}
+
+.profile-card:hover::before {
+  transform: rotate(-90deg) scaleX(1.63) scaleY(0.62);
+}
+
+.name {
+  margin-top: -20px;
+  margin-left: 35px;
+  font-size: 20px;
+  font-family: "Bungee Spice", sans-serif;
+  filter: blur(0.3px);
+  letter-spacing: 2px;
+}
+
+.info {
+  margin: 35px;
+  text-align: justify;
+  font-size: 0.9rem;
+  font-family: "Poppins", sans-serif;
+  color: rgba(157, 146, 142, 0.7);
+}
+
+.follow-icons {
+  display: flex;
+  gap: 40px;
+  margin: 30px;
+  color: rgba(157, 146, 142);
+  transition: 0.3s all ease-in-out;
+}
+
+i {
+  transition: 0.5s all ease-in-out;
+}
+i:hover {
+  color: palevioletred;
+
+  transform: rotate(360deg);
+}
+
+.hover-space {
+  border: 2px solid black;
+  margin: -10px 20px 0 20px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  transition: 0.2s all;
+  background: linear-gradient(#212121, #212121) padding-box,
+    linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
+  border: 2px solid transparent;
+}
+
+/* .hover-space::after{
+content: "";
+height: 225px;
+width: 305px;
+position: absolute;
+background: url(ma2ai.jpg);
+background: red;
+background-size: cover;
+top: -648px;
+left: -25px;
+border-radius: 10px;
+transition: .35s all ease-in-out;
+
+}
+
+.hover-space:hover::after{
+    transform: translateY(500px);
+} */
+
+.hover-space {
+  position: relative;
+}
+.top-img {
+  position: absolute;
+  /* width: 299.9px;
+    height: 220px; */
+  height: 170px;
+  width: 205px;
+  margin: 30px;
+  margin-left: 50px;
+  border-radius: 20px;
+  z-index: 1;
+  opacity: 0;
+  transition: 0.5s all ease-in-out;
+}
+
+.profile-card:hover .top-img {
+  opacity: 1;
+  filter: blur(0.2px);
+  transform: scale(1.17);
+}
