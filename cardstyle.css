@@ -21,7 +21,10 @@ body {
 
 .parent {
   margin: 100px;
-  margin-left: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 .profile-card {
   height: 500px;
@@ -90,19 +93,23 @@ body {
   color: rgba(157, 146, 142, 0.7);
 }
 
-.follow-icons {
+.follow-icons{
   display: flex;
   gap: 40px;
   margin: 30px;
   color: rgba(157, 146, 142);
   transition: 0.3s all ease-in-out;
 }
-
+.follow-icons a{
+  text-decoration: none;
+font-size: 20px;
+color: white;
+}
 i {
   transition: 0.5s all ease-in-out;
 }
 i:hover {
-  color: palevioletred;
+  color: palegreen;
 
   transform: rotate(360deg);
 }
